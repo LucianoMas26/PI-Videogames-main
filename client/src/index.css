@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(to right, #18181a 40%, #191420 74%);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: white;
+}
+button,
+li,
+select,
+option {
+  font-family: "Poppins", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1b1a1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #181818;
+}

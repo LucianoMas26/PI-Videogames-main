@@ -1,0 +1,143 @@
+.sidebar {
+  background-color: #18181a;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+}
+.sidebar a {
+  text-align: center;
+}
+.logo {
+  width: 40%;
+  max-width: 190px;
+}
+
+.sidebarList {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.sidebarList li {
+  display: flex;
+  margin-bottom: 80px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarList li a {
+  padding: 0 2rem;
+  font-size: 14px;
+  font-weight: bolder;
+  align-items: center;
+  text-decoration: none;
+  color: #aaafbd;
+  transition: ease-in-out 0.3s;
+}
+.sidebarList li a:hover {
+  color: rgb(224, 224, 224);
+  text-shadow: 0px 0px 6px #b6b6b6;
+}
+
+/* .activeClassHome {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #6384e0;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassForm {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #ce7f3f;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassAbout {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #d46ebe;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassDetail {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #74cc62;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+} */
+.activeClassHome {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #6f42c1;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassForm {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #6f42c1;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassAbout {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #6f42c1;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.activeClassDetail {
+  color: rgb(235, 235, 235) !important;
+  text-shadow: 0px 0px 6px #6f42c1;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* .homeIcon {
+  color: #6384e0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.formIcon {
+  color: #ce7f3f;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.aboutIcon {
+  color: #d46ebe;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.detailIcon {
+  color: #74cc62;
+  width: 1.5rem;
+  height: 1.5rem;
+} */
+.homeIcon {
+  color: #6f42c1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.formIcon {
+  color: #6f42c1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.aboutIcon {
+  color: #6f42c1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.detailIcon {
+  color: #6f42c1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
