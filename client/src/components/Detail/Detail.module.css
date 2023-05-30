@@ -1,0 +1,92 @@
+.containerDetail {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.blackBackground {
+  background-color: black;
+  flex: 4;
+  transition: flex 0.5s ease;
+}
+.blackBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.863) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.blackBackground::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40%;
+  width: 1rem; /* Ancho de la línea vertical */
+  width: 1rem; /* Ancho de la línea vertical */
+  background-color: rgba(0, 0, 0, 0.897);
+  box-shadow: 0px 0px 30px 20px rgb(0, 0, 0); /* Sombra difuminada */
+  transform: translateX(-50%);
+}
+
+.imageBackground {
+  flex: 6;
+  transition: flex 0.5s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  max-width: 50%;
+  position: absolute;
+  top: 45%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  color: white;
+  text-align: start;
+}
+.goBackButton {
+  position: absolute;
+  top: -120px;
+  background-color: transparent;
+  border: solid white;
+  border-width: 1px;
+  transition: ease-in-out 0.3s;
+}
+
+.goBackButton:hover {
+  background: #6f42c1;
+}
+
+.genre {
+  margin-right: 10px;
+}
+
+.detailTitle {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.detailDescription {
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.ratingDetailStars {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: gold;
+  font-size: 20px;
+}

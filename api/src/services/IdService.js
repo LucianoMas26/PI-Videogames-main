@@ -21,9 +21,12 @@ const IdService = async (id) => {
   if (genres) {
     genresNames = genres.map((genre) => genre.name)
   }
+
+  const parsedDescription = description.replace(/<[^>]+>/g, "")
+
   let videoGame = {
     name,
-    description,
+    parsedDescription,
     released,
     background_image,
     rating,
@@ -36,12 +39,12 @@ const IdService = async (id) => {
     return {
       id,
       name,
-      description,
+      description: parsedDescription,
       released,
       background_image,
       rating,
-      genresNames,
-      platformNames,
+      genres: genresNames,
+      platforms: platformNames,
       created: false
     }
   }

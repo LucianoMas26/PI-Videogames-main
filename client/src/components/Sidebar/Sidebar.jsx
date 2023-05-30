@@ -6,7 +6,7 @@ import image from "../../img/otherLogo.png"
 import { RiHomeLine } from "react-icons/ri"
 import { FaWpforms } from "react-icons/fa"
 import { FiInfo } from "react-icons/fi"
-import { BiDetail } from "react-icons/bi"
+import { BsCart } from "react-icons/bs"
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
@@ -38,14 +38,14 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <BiDetail className={styles.detailIcon} />
+          <BsCart className={styles.cartIcon} />
           <NavLink
             to="/detail"
             className={({ isActive }) =>
               isActive ? styles.activeClassDetail : { color: "#93a8b4" }
             }
           >
-            Detail
+            Cart
           </NavLink>
         </li>
         <li>

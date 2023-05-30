@@ -25,6 +25,12 @@
 
 .pagination button:hover {
   background: #6f42c1;
-  box-shadow: 0 0 12px 4px #6f42c1; /* Aumenta el tamaño de la sombra */
+  box-shadow: 0 0 12px 4px #6f42c1;
+  transform: scale(1.1);
+}
+
+.pagination button.activeButton {
+  background: #6f42c1;
+  box-shadow: 0 0 12px 4px #6f42c1;
   transform: scale(1.1);
 }

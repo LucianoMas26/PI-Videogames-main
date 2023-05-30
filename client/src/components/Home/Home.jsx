@@ -116,11 +116,13 @@ export default function Home() {
               videogamePerPage={videogamePerPage}
               allVideogames={allVideogames}
               pagination={pagination}
+              currentPage={currentPage}
             />
             <div className={styles.cardGrid}>
               {currentVideogame?.map((videogame) => {
                 return (
                   <Card
+                    id={videogame.id}
                     name={videogame.name}
                     background_image={videogame.background_image}
                     rating={videogame.rating}
@@ -132,6 +134,7 @@ export default function Home() {
                         : videogame.platforms
                     }
                     key={videogame.id}
+                    currentPage={currentPage}
                   />
                 )
               })}

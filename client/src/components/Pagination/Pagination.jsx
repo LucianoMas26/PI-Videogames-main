@@ -3,7 +3,8 @@ import styles from "../Pagination/Pagination.module.css"
 export default function Pagination({
   videogamePerPage,
   allVideogames,
-  pagination
+  pagination,
+  currentPage
 }) {
   const pageNumbers = []
   const totalPages = Math.ceil(allVideogames.length / videogamePerPage)
@@ -21,6 +22,7 @@ export default function Pagination({
         {pageNumbers?.map((number) => (
           <li key={number}>
             <button
+              className={currentPage === number ? styles.activeButton : ""}
               onClick={(event) => {
                 event.preventDefault()
                 handleClick(number)

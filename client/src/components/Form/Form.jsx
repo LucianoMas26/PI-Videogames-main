@@ -20,7 +20,7 @@ export default function Form() {
   const navigate = useNavigate()
   const genres = useSelector((state) => state.genres)
   const platforms = useSelector((state) => state.platforms)
-
+  console.log(platforms)
   const [input, setInput] = useState({
     name: "",
     description: "",
