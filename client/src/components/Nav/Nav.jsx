@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { Outlet } from "react-router-dom"
 import styles from "../Nav/Nav.module.css"
-import { RiSearchLine } from "react-icons/ri"
-import { FaUserCircle } from "react-icons/fa"
-import { useDispatch } from "react-redux"
+import userIcon from "../../img/userIcon.png"
+import searchIcon from "../../img/searchIcon.png"
+import { useDispatch, useSelector } from "react-redux"
 import { filterVideogameName } from "../../actions"
 
 export default function Nav() {
@@ -30,7 +30,7 @@ export default function Nav() {
       <div className={styles.flexNav}>
         <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
           <div className={styles.searchInputContainer}>
-            <RiSearchLine className={styles.searchIcon} />
+            <img src={searchIcon} className={styles.searchIcon} />
             <input
               type="text"
               value={searchQuery}
@@ -44,7 +44,7 @@ export default function Nav() {
           </button>
         </form>
 
-        <FaUserCircle className={styles.userIcon} />
+        <img src={userIcon} className={styles.userIcon} />
 
         <Outlet />
       </div>

@@ -82,11 +82,12 @@
   font-weight: bolder;
   margin-bottom: 20px;
 }
-
 .ratingDetailStars {
   display: flex;
-  gap: 5px;
+  gap: 8px;
   align-items: center;
+}
+.ratingDetailStars img {
   color: gold;
-  font-size: 20px;
+  width: 20px;
 }

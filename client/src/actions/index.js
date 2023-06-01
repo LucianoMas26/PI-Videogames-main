@@ -44,10 +44,10 @@ export function postVideogame(payload) {
 export function filterVideogameName(name) {
   return async function (dispatch) {
     try {
-      var { data } = await axios.get(
+      const { data } = await axios.get(
         `http://localhost:3001/videogames?name=${name}`
       )
-      console.log(data)
+
       return dispatch({
         type: "GET_NAME_VIDEOGAME",
         payload: data

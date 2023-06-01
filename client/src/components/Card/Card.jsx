@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Card.module.css"
-import { AiFillStar, AiOutlineStar } from "react-icons/ai"
+import starIcon from "../../img/starIcon.png"
+import emptyStarIcon from "../../img/emptyStarIcon.png"
 import { Link } from "react-router-dom"
 import { getRatingStars } from "../../utils/getRatingStars"
 
@@ -11,8 +12,7 @@ const Card = ({
   rating,
   released,
   genres,
-  platforms,
-  currentPage
+  platforms
 }) => {
   return (
     <Link to={`/detail/${id}`}>
@@ -26,7 +26,7 @@ const Card = ({
         <div className={styles.cardContent}>
           <h3>{name}</h3>
           <div className={styles.ratingStars}>
-            {getRatingStars(rating, AiFillStar, AiOutlineStar)}
+            {getRatingStars(rating, starIcon, emptyStarIcon)}
           </div>
           <h5>Released: {released}</h5>
           <h5>Genres: {genres}</h5>

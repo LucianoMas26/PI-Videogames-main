@@ -70,8 +70,6 @@ export default function Form() {
         [name]: value
       })
     }
-
-    console.log(input)
   }
 
   const handlePlatformChange = (event) => {

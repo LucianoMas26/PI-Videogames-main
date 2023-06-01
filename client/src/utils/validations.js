@@ -10,7 +10,7 @@ export const validateName = (name) => {
 }
 
 export const validateDescription = (description) => {
-  const regexDescription = /^[a-zA-Z0-9\s]{1,}$/
+  const regexDescription = /^[a-zA-Z0-9\s.,!?]{1,200}$/
 
   if (!regexDescription.test(description)) {
     return "Description must be alphanumeric"

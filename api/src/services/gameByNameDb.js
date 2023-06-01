@@ -30,7 +30,6 @@ const gameByNameDb = async (name) => {
     const allVideoGames = await Videogame.findAll()
 
     const formattedAllVideoGames = allVideoGames.map((game) => {
-      // Unir géneros y plataformas en una cadena separada por comas
       const genres = Array.isArray(game.genres)
         ? game.genres.join(", ")
         : game.genres

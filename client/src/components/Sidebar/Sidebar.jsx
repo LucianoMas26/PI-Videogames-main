@@ -3,10 +3,10 @@ import styles from "../Sidebar/Sidebar.module.css"
 import { Outlet } from "react-router-dom"
 import { NavLink, Link } from "react-router-dom"
 import image from "../../img/otherLogo.png"
-import { RiHomeLine } from "react-icons/ri"
-import { FaWpforms } from "react-icons/fa"
-import { FiInfo } from "react-icons/fi"
-import { BsCart } from "react-icons/bs"
+import houseIcon from "../../img/houseIcon.png"
+import formIcon from "../../img/formIcon.png"
+import cartIcon from "../../img/cartIcon.png"
+import infoIcon from "../../img/infoIcon.png"
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
@@ -15,7 +15,7 @@ const Sidebar = () => {
       </Link>
       <ul className={styles.sidebarList}>
         <li>
-          <RiHomeLine className={styles.homeIcon} />
+          <img src={houseIcon} className={styles.homeIcon} />
           <NavLink
             to="/home"
             className={({ isActive }) =>
@@ -27,7 +27,7 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <FaWpforms className={styles.formIcon} />
+          <img src={formIcon} className={styles.formIcon} />
           <NavLink
             to="/form"
             className={({ isActive }) =>
@@ -38,7 +38,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <BsCart className={styles.cartIcon} />
+          <img src={cartIcon} className={styles.cartIcon} />
           <NavLink
             to="/detail"
             className={({ isActive }) =>
@@ -49,7 +49,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <FiInfo className={styles.aboutIcon} />
+          <img src={infoIcon} className={styles.aboutIcon} />
           <NavLink
             to="/about"
             className={({ isActive }) =>

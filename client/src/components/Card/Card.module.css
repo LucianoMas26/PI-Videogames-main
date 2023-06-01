@@ -67,7 +67,8 @@ h5 {
   align-items: center;
 }
 
-.ratingStars svg {
+.ratingStars img {
   color: gold;
   margin-right: 2px;
+  width: 13px;
 }

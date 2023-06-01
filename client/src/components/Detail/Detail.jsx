@@ -6,7 +6,8 @@ import styles from "../Detail/Detail.module.css"
 import axios from "axios"
 import { getRatingStars } from "../../utils/getRatingStars"
 import Loading from "../Loading/Loading"
-import { AiFillStar, AiOutlineStar } from "react-icons/ai"
+import starIcon from "../../img/starIcon.png"
+import emptyStarIcon from "../../img/emptyStarIcon.png"
 
 export default function Detail() {
   const { id } = useParams()
@@ -77,7 +78,7 @@ export default function Detail() {
                 : description}
             </p>
             <div className={styles.ratingDetailStars}>
-              {getRatingStars(rating, AiFillStar, AiOutlineStar)}
+              {getRatingStars(rating, starIcon, emptyStarIcon)}
             </div>
           </div>
         </>
