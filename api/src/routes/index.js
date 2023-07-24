@@ -15,4 +15,3 @@ router.get("/genres", getGenres)
 router.get("/platforms", getPlatforms)
 
 module.exports = router
-
