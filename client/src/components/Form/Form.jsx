@@ -20,7 +20,7 @@ export default function Form() {
   const navigate = useNavigate()
   const genres = useSelector((state) => state.genres)
   const platforms = useSelector((state) => state.platforms)
-  console.log(platforms)
+
   const [input, setInput] = useState({
     name: "",
     description: "",
@@ -58,11 +58,10 @@ export default function Form() {
 
       setInput({
         ...input,
-        [name]: formattedValue,
-        error: {
-          ...input.error,
-          [name]: validationError
-        }
+        [name]: formattedValue
+      })
+      setErrors({
+        [name]: validationError
       })
     } else {
       setInput({

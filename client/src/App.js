@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom"
 import React from "react"
-
 import Landing from "./components/Landing/Landing"
 import "../src/index.css"
 import Detail from "./components/Detail/Detail"

@@ -4,7 +4,7 @@ export const validateName = (name) => {
     return "Name is required"
   }
   if (!rejexName.test(name)) {
-    return "Name must be alphanumeric and have 25 characters or less"
+    return "Name must have 25 characters or less"
   }
   return null
 }
@@ -13,7 +13,7 @@ export const validateDescription = (description) => {
   const regexDescription = /^[a-zA-Z0-9\s.,!?]{1,200}$/
 
   if (!regexDescription.test(description)) {
-    return "Description must be alphanumeric"
+    return "You have to set a description"
   }
 
   return null

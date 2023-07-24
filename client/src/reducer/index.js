@@ -8,11 +8,18 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_VIDEOGAMES":
+      if (state.videogames.length === 0) {
+        return {
+          ...state,
+          videogames: action.payload,
+          allVideogames: action.payload
+        }
+      }
       return {
         ...state,
-        videogames: action.payload,
         allVideogames: action.payload
       }
+
     case "GET_PLATFORMS":
       return {
         ...state,
@@ -57,7 +64,7 @@ function rootReducer(state = initialState, action) {
       const allVideogames = state.allVideogames
 
       if (rating === "popular") {
-        const sortedVideogames = allVideogames.sort(
+        const sortedVideogames = state.videogames.sort(
           (a, b) => b.rating - a.rating
         )
         return {
@@ -65,33 +72,51 @@ function rootReducer(state = initialState, action) {
           videogames: sortedVideogames
         }
       } else if (rating === "unpopular") {
-        const sortedVideogames = allVideogames.sort(
+        const sortedVideogames = state.videogames.sort(
           (a, b) => a.rating - b.rating
         )
         return {
           ...state,
           videogames: sortedVideogames
         }
-      } else {
+      } else if (rating === "all") {
         return {
           ...state,
           videogames: allVideogames
         }
       }
+
     case "SORT_BY_NAME":
       const { order } = action.payload
-      const sortedByName = [...state.videogames].sort((a, b) => {
-        if (order === "ascendent") {
-          return a.name.localeCompare(b.name)
-        } else if (order === "descendent") {
-          return b.name.localeCompare(a.name)
+
+      let alfabetic = [...state.allVideogames]
+      let otherAlfabetic = [...state.videogames]
+
+      if (order === "ascendent") {
+        alfabetic.sort((a, b) => b.name.localeCompare(a.name))
+        otherAlfabetic.sort((a, b) => b.name.localeCompare(a.name))
+        return {
+          ...state,
+          allVideogames: alfabetic,
+          videogames: otherAlfabetic
         }
-        return 0
-      })
+      }
+      if (order === "descendent") {
+        alfabetic.sort((a, b) => a.name.localeCompare(b.name))
+        otherAlfabetic.sort((a, b) => a.name.localeCompare(b.name))
+        return {
+          ...state,
+          allVideogames: alfabetic,
+          videogames: otherAlfabetic
+        }
+      } else {
+        alfabetic = state.allVideogames
+      }
       return {
         ...state,
-        videogames: sortedByName
+        countries: alfabetic
       }
+
     case "FILTER_CREATED":
       const createdFilter =
         action.payload === "created"
@@ -101,6 +126,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         videogames: createdFilter
       }
+
     default:
       return state
   }

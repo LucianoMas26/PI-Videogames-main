@@ -1,7 +1,8 @@
 import axios from "axios"
 export function getVideogames() {
   return async function (dispatch) {
-    var { data } = await axios.get("http://localhost:3001/videogames")
+    const { data } = await axios.get("http://localhost:3001/videogames")
+
     return dispatch({
       type: "GET_VIDEOGAMES",
       payload: data

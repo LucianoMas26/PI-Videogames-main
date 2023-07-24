@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
 import { useEffect } from "react"
 import { useState } from "react"
 import styles from "../Detail/Detail.module.css"
@@ -21,7 +21,6 @@ export default function Detail() {
         const { data } = await axios.get(
           `http://localhost:3001/videogames/${id}`
         )
-        console.log(data)
         if (data.name) {
           setVideogame(data)
         } else {
@@ -36,12 +35,12 @@ export default function Detail() {
     fetchData()
   }, [id])
 
-  const { name, background_image, description, rating, genres, platforms } =
-    videogame
+  const { name, background_image, description, rating, genres } = videogame
 
   const backgroundImageStyle = {
     backgroundImage: `url(${background_image})`
   }
+  const location = useLocation()
 
   const MAX_DESCRIPTION_LENGTH = 600
 

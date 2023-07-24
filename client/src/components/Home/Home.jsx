@@ -22,7 +22,6 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1)
   const [videogamePerPage, setVideogamePerPage] = useState(15)
   const [selectedOption, setSelectedOption] = useState("")
-  const [selectedSort, setSelectedSort] = useState("")
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -55,10 +54,6 @@ export default function Home() {
   }, [dispatch])
 
   useEffect(() => {
-    dispatch(getVideogames())
-  }, [dispatch])
-
-  useEffect(() => {
     setCurrentPage(1)
   }, [allVideogames])
 
@@ -66,7 +61,7 @@ export default function Home() {
     const selectedOption = e.target.value
     setSelectedOption(selectedOption)
     if (selectedOption === "all") {
-      dispatch(getVideogames())
+      dispatch(filterVideogamesByRating("all"))
     } else if (selectedOption === "popular") {
       dispatch(filterVideogamesByRating("popular"))
     } else if (selectedOption === "unpopular") {
@@ -75,7 +70,7 @@ export default function Home() {
   }
   const handleSortByName = (e) => {
     const selectedOption = e.target.value
-    setSelectedSort(selectedSort)
+
     if (selectedOption === "ascendent" || selectedOption === "descendent") {
       dispatch(sortVideogamesByName(selectedOption))
     }
@@ -112,6 +107,7 @@ export default function Home() {
               handleCreated={handleCreated}
               handleFilterByGenre={handleFilterByGenre}
             />
+
             <Pagination
               videogamePerPage={videogamePerPage}
               allVideogames={allVideogames}

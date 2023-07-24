@@ -15,7 +15,7 @@ const Sidebar = () => {
       </Link>
       <ul className={styles.sidebarList}>
         <li>
-          <img src={houseIcon} className={styles.homeIcon} />
+          <img src={houseIcon} className={styles.homeIcon} alt="" />
           <NavLink
             to="/home"
             className={({ isActive }) =>
@@ -27,7 +27,7 @@ const Sidebar = () => {
         </li>
 
         <li>
-          <img src={formIcon} className={styles.formIcon} />
+          <img src={formIcon} className={styles.formIcon} alt="" />
           <NavLink
             to="/form"
             className={({ isActive }) =>
@@ -38,7 +38,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <img src={cartIcon} className={styles.cartIcon} />
+          <img src={cartIcon} className={styles.cartIcon} alt="" />
           <NavLink
             to="/detail"
             className={({ isActive }) =>
@@ -49,7 +49,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <img src={infoIcon} className={styles.aboutIcon} />
+          <img src={infoIcon} className={styles.aboutIcon} alt="" />
           <NavLink
             to="/about"
             className={({ isActive }) =>

@@ -1,19 +1,21 @@
 const { gameService, gameByNameDb } = require("../services/index")
 
 const getGames = async (req, res) => {
-  const { name } = req.query
-
   try {
+    const { name } = req.query
     const gamesFromApi = await gameService(name)
     const gamesFromDb = await gameByNameDb(name)
+
+    let allGames = []
     if (gamesFromApi && gamesFromDb) {
-      const allGames = [...gamesFromApi, ...gamesFromDb]
-      res.status(200).json(allGames)
+      allGames = [...gamesFromApi, ...gamesFromDb]
     } else if (gamesFromApi) {
-      res.status(200).json(gamesFromApi)
+      allGames = gamesFromApi
     } else {
-      res.status(200).json(gamesFromDb)
+      allGames = gamesFromDb
     }
+
+    res.status(200).json(allGames)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
