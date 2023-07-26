@@ -19,7 +19,7 @@ export default function Detail() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3001/videogames/${id}`
+          `https://pi-videogames-main-production-fa1b.up.railway.app/videogames/${id}`
         )
         if (data.name) {
           setVideogame(data)
