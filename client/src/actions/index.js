@@ -1,7 +1,9 @@
 import axios from "axios"
+const URL = "https://pi-videogames-main-production-fa1b.up.railway.app/"
+
 export function getVideogames() {
   return async function (dispatch) {
-    const { data } = await axios.get("http://localhost:3001/videogames")
+    const { data } = await axios.get(`${URL}videogames`)
 
     return dispatch({
       type: "GET_VIDEOGAMES",
@@ -11,7 +13,7 @@ export function getVideogames() {
 }
 export function getPlatforms() {
   return async function (dispatch) {
-    const { data } = await axios.get("http://localhost:3001/platforms")
+    const { data } = await axios.get(`${URL}platforms`)
     return dispatch({
       type: "GET_PLATFORMS",
       payload: data
@@ -21,7 +23,7 @@ export function getPlatforms() {
 
 export function getGenres() {
   return async function (dispatch) {
-    const { data } = await axios.get("http://localhost:3001/genres")
+    const { data } = await axios.get(`${URL}genres`)
     return dispatch({
       type: "GET_GENRES",
       payload: data
@@ -31,10 +33,7 @@ export function getGenres() {
 
 export function postVideogame(payload) {
   return async function (dispatch) {
-    const { data } = await axios.post(
-      "http://localhost:3001/videogames",
-      payload
-    )
+    const { data } = await axios.post(`${URL}videogames`, payload)
     return dispatch({
       type: "POST_VIDEOGAME",
       payload: data
@@ -45,9 +44,7 @@ export function postVideogame(payload) {
 export function filterVideogameName(name) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(
-        `http://localhost:3001/videogames?name=${name}`
-      )
+      const { data } = await axios.get(`${URL}videogames?name=${name}`)
 
       return dispatch({
         type: "GET_NAME_VIDEOGAME",
